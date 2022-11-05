@@ -29,6 +29,18 @@ app.get("/api/quiz",async(req, res)=>{
     const quiz = await QuestionModel.find({})
     res.send(quiz);
 })
+app.get("api/quiz/easy",async(req, res)=>{
+    const quiz = await QuestionModel.find({difficultyLevel:"Easy"})
+    res.send(quiz);
+})
+app.get("api/quiz/easy",async(req, res)=>{
+    const quiz = await QuestionModel.find({difficultyLevel:"Medium"})
+    res.send(quiz);
+})
+app.get("api/quiz/easy",async(req, res)=>{
+    const quiz = await QuestionModel.find({difficultyLevel:"Hard"})
+    res.send(quiz);
+})
 
 
 const db = mongoose.connection
