@@ -41,6 +41,18 @@ app.get("/api/quiz/hard",async(req, res)=>{
     const quiz = await QuestionModel.find({difficultyLevel:"Hard"})
     res.send(quiz);
 })
+app.get("/api/quiz/sports",async(req, res)=>{
+    const quiz = await QuestionModel.find({category:"Sports"})
+    res.send(quiz);
+})
+app.get("/api/quiz/geographical",async(req, res)=>{
+    const quiz = await QuestionModel.find({category:"Geographical"})
+    res.send(quiz);
+})
+app.get("/api/quiz/music",async(req, res)=>{
+    const quiz = await QuestionModel.find({category:"Music"})
+    res.send(quiz);
+})
 
 
 const db = mongoose.connection
