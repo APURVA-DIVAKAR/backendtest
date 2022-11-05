@@ -23,13 +23,11 @@ app.post("/api/questions",async(req,res)=>{
          message:"que Created Succesfully!"
      })
 
+})
 
- // else{
- //     res.status(400).send({
- //         message:"Bad Request - All fileds are required",
-
- //     })
- // }
+app.get("/api/quiz",async(req, res)=>{
+    const quiz = await QuestionModel.find({})
+    res.send(quiz);
 })
 
 
