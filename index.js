@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }))
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 
 app.get('/',(req,res)=>res.send(`hello`))
-app.get("api/test",(req,res)=>res.send("working"))
+app.get("/api/test",(req,res)=>res.send("working"))
 
 
 const db = mongoose.connection
