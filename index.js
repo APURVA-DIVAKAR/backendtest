@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }))
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 
 app.get('/',(req,res)=>res.send(`hello`))
-app.post("api/questions",async(req,res)=>{
+app.post("/api/questions",async(req,res)=>{
     const {category,difficultyLevel,question,correctAnswer,option1,option2,option3} = req.body;     
      const que = new QuestionModel({category,difficultyLevel,question,correctAnswer,option1,option2,option3})
      await que.save();
