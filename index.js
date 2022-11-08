@@ -37,7 +37,7 @@ app.post("/api/jobs",async(req,res)=>{
 
 })
 
-app.get("/api/jobs",async(req, res)=>{
+app.get("/api/jobs/sort1",async(req, res)=>{
     var mysort = { postedAt: 1 };
     const jobs = await JobModel.find({}).sort(mysort)
     res.send(jobs);
