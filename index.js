@@ -55,6 +55,8 @@ app.get("/api/quiz/music",async(req, res)=>{
 })
 
 
+
+
 const db = mongoose.connection
 db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Database connected'))
