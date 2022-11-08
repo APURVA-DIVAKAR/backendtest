@@ -38,8 +38,12 @@ app.post("/api/jobs",async(req,res)=>{
 })
 
 app.get("/api/jobs/sort1",async(req, res)=>{
-    var mysort = { postedAt: 1 };
-    const jobs = await JobModel.find({}).sort(mysort)
+    const jobs = await JobModel.find({}).sort({postedAt:-1})
+    res.send(jobs);
+})
+app.get("/api/jobs/sort",async(req, res)=>{
+   
+    const jobs = await JobModel.find({}).sort({postedAt:-1})
     res.send(jobs);
 })
 // app.get("/api/quiz/easy",async(req, res)=>{
