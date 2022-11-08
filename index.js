@@ -18,7 +18,10 @@ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTo
 app.get('/',(req,res)=>res.send(`hello`))
 
 app.get("/api/jobs/:page",async(req, res)=>{
-    const page = parseInt(req.params?.page) || 1;
+    const page = parseInt(req.params.page) ;
+    if(!page){
+        page=1
+    }
     const limit = 10;
     
     const jobs = await JobModel.find({}).skip((page-1)*limit).limit(limit)
