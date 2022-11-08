@@ -46,6 +46,21 @@ app.get("/api/jobs/sort",async(req, res)=>{
     const jobs = await JobModel.find({}).sort({postedAt:-1})
     res.send(jobs);
 })
+app.get("/api/jobs/js",async(req, res)=>{
+   
+    const jobs = await JobModel.find({language:"JavaScript"})
+    res.send(jobs);
+})
+app.get("/api/jobs/py",async(req, res)=>{
+   
+    const jobs = await JobModel.find({language:"Phython"})
+    res.send(jobs);
+})
+app.get("/api/jobs/java",async(req, res)=>{
+   
+    const jobs = await JobModel.find({language:"Java",language:"java"})
+    res.send(jobs);
+})
 // app.get("/api/quiz/easy",async(req, res)=>{
 //     const quiz = await QuestionModel.find({difficultyLevel:"Easy"})
 //     res.send(quiz);
