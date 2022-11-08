@@ -17,15 +17,14 @@ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTo
 
 app.get('/',(req,res)=>res.send(`hello`))
 
-app.get("/api/jobs/:page",async(req, res)=>{
-    const page = parseInt(req.params.page) ;
-    if(!page){
-        page=1
-    }
-    const limit = 10;
-    
-    const jobs = await JobModel.find({}).skip((page-1)*limit).limit(limit)
+app.get("/api/jobs",async(req, res)=>{
+    const jobs = await JobModel.find({})
     res.send(jobs);
+    // const page = parseInt(req.params.page) ;
+    // const limit = 10;
+    
+    // const jobs = await JobModel.find({}).skip((page-1)*limit).limit(limit)
+    // res.send(jobs);
 })
 app.post("/api/jobs",async(req,res)=>{
     const {company,postedAt,city,location,role,level,contract,position,language} = req.body;     
