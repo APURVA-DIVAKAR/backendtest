@@ -37,10 +37,11 @@ app.post("/api/jobs",async(req,res)=>{
 
 })
 
-// app.get("/api/quiz",async(req, res)=>{
-//     const quiz = await QuestionModel.find({})
-//     res.send(quiz);
-// })
+app.get("/api/jobs",async(req, res)=>{
+    var mysort = { postedAt: 1 };
+    const jobs = await JobModel.find({}).sort(mysort)
+    res.send(jobs);
+})
 // app.get("/api/quiz/easy",async(req, res)=>{
 //     const quiz = await QuestionModel.find({difficultyLevel:"Easy"})
 //     res.send(quiz);
