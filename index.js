@@ -19,6 +19,7 @@ app.get('/',(req,res)=>res.send(`hello`))
 
 app.get("/api/jobs",async(req, res)=>{
     const jobs = await JobModel.find({})
+    console.log(jobs)
     res.send(jobs);
     // const page = parseInt(req.params.page) ;
     // const limit = 10;
