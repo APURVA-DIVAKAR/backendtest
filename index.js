@@ -58,7 +58,7 @@ app.get("/api/jobs/py",async(req, res)=>{
 })
 app.get("/api/jobs/java",async(req, res)=>{
    
-    const jobs = await JobModel.find({language:"Java",language:"java"})
+    const jobs = await JobModel.find({$or: [ { language: "Java" }, { language: "java" } ]})
     res.send(jobs);
 })
 // app.get("/api/quiz/easy",async(req, res)=>{
