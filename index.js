@@ -53,7 +53,7 @@ app.get("/api/jobs/js",async(req, res)=>{
 })
 app.get("/api/jobs/py",async(req, res)=>{
    
-    const jobs = await JobModel.find({language:"Phython"})
+    const jobs = await JobModel.find({language:"Python"})
     res.send(jobs);
 })
 app.get("/api/jobs/java",async(req, res)=>{
