@@ -21,6 +21,7 @@ const JobSchema = new Schema({
     contract:{type:String,required:true},
     position:{type:String,required:true},
     language:{type:String,required:true},
+	location:{type:String,required:true},
     
 })
 

@@ -21,15 +21,15 @@ app.get("/api/jobs",async(req, res)=>{
     const jobs = await JobModel.find({})
     res.send(jobs);
 })
-// app.post("/api/questions",async(req,res)=>{
-//     const {category,difficultyLevel,question,correctAnswer,option1,option2,option3} = req.body;     
-//      const que = new QuestionModel({category,difficultyLevel,question,correctAnswer,option1,option2,option3})
-//      await que.save();
-//      res.status(201).send({
-//          message:"que Created Succesfully!"
-//      })
+app.post("/api/jobs",async(req,res)=>{
+    const {company,postedAt,city,location,role,level,contract,position,language} = req.body;     
+     const job = new JobModel({company,postedAt,city,location,role,level,contract,position,language})
+     await job.save();
+     res.status(201).send({
+         message:"Job Created Succesfully!"
+     })
 
-// })
+})
 
 // app.get("/api/quiz",async(req, res)=>{
 //     const quiz = await QuestionModel.find({})
